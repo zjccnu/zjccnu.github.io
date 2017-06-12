@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>vue.js打包问题总结 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="vue 打包静态界面报错可能原因：index.html 中 和compnetnts中进行了重复的引用解决方案: 去掉重复的引用 vue 打包es6语法报错问题(dev下不错但是build报错)可能原因:1.babel配置问题，具体配置自行百度2.webpack.prod.conf.js 在配置发布配置时默认采用      new webpack.optimize.UglifyJsPlugin(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue.js打包问题总结">
+<meta property="og:url" content="http://yoursite.com/2017/06/12/vue.js组件化开发问题小结/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="vue 打包静态界面报错可能原因：index.html 中 和compnetnts中进行了重复的引用解决方案: 去掉重复的引用 vue 打包es6语法报错问题(dev下不错但是build报错)可能原因:1.babel配置问题，具体配置自行百度2.webpack.prod.conf.js 在配置发布配置时默认采用      new webpack.optimize.UglifyJsPlugin(">
+<meta property="og:updated_time" content="2017-06-12T10:12:28.116Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue.js打包问题总结">
+<meta name="twitter:description" content="vue 打包静态界面报错可能原因：index.html 中 和compnetnts中进行了重复的引用解决方案: 去掉重复的引用 vue 打包es6语法报错问题(dev下不错但是build报错)可能原因:1.babel配置问题，具体配置自行百度2.webpack.prod.conf.js 在配置发布配置时默认采用      new webpack.optimize.UglifyJsPlugin(">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vue.js组件化开发问题小结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/12/vue.js组件化开发问题小结/" class="article-date">
+  <time datetime="2017-06-12T10:09:05.000Z" itemprop="datePublished">2017-06-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue.js打包问题总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<ol>
+<li>vue 打包静态界面报错<br>可能原因：index.html 中 和compnetnts中进行了重复的引用<br>解决方案: 去掉重复的引用</li>
+<li>vue 打包es6语法报错问题(dev下不错但是build报错)<br>可能原因:1.babel配置问题，具体配置自行百度<pre><code>2.webpack.prod.conf.js 在配置发布配置时默认采用
+     new webpack.optimize.UglifyJsPlugin({
+         compress: {
+           warnings: false
+         },
+         sourceMap: true
+       })
+  不会将es6转es5 直接去掉这个代码，会采用babel进行编辑
+</code></pre>3:vue打包后静态资源找不到，在config 中的index.js里，我们看到如下配置<pre><code>index: path.resolve(__dirname, &apos;../dist/index.html&apos;),
+ assetsRoot: path.resolve(__dirname, &apos;../dist&apos;),
+ assetsSubDirectory: &apos;static&apos;,
+ assetsPublicPath: &apos;/&apos;,
+ productionSourceMap: true,
+</code></pre>静态资源默认为与src同级的static下，所以需要自己在src同级目录下建立static，并将自己的静态资源放入即可</li>
+</ol>
+<p>4.部署到apache问题，将apache的默认目录改为打包后的文件目录,即打包后的文件在dist下，我们把apache2的默认目录设置为dist即可</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/12/vue.js组件化开发问题小结/" data-id="cj3tzfhak0002gipmslcmbj12" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/12/github/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">github</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/12/vue.js组件化开发问题小结/">vue.js打包问题总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/12/github/">github</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/12/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

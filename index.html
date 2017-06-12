@@ -61,6 +61,61 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-vue.js组件化开发问题小结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/12/vue.js组件化开发问题小结/" class="article-date">
+  <time datetime="2017-06-12T10:09:05.000Z" itemprop="datePublished">2017-06-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/12/vue.js组件化开发问题小结/">vue.js打包问题总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<ol>
+<li>vue 打包静态界面报错<br>可能原因：index.html 中 和compnetnts中进行了重复的引用<br>解决方案: 去掉重复的引用</li>
+<li>vue 打包es6语法报错问题(dev下不错但是build报错)<br>可能原因:1.babel配置问题，具体配置自行百度<pre><code>2.webpack.prod.conf.js 在配置发布配置时默认采用
+     new webpack.optimize.UglifyJsPlugin({
+         compress: {
+           warnings: false
+         },
+         sourceMap: true
+       })
+  不会将es6转es5 直接去掉这个代码，会采用babel进行编辑
+</code></pre>3:vue打包后静态资源找不到，在config 中的index.js里，我们看到如下配置<pre><code>index: path.resolve(__dirname, &apos;../dist/index.html&apos;),
+ assetsRoot: path.resolve(__dirname, &apos;../dist&apos;),
+ assetsSubDirectory: &apos;static&apos;,
+ assetsPublicPath: &apos;/&apos;,
+ productionSourceMap: true,
+</code></pre>静态资源默认为与src同级的static下，所以需要自己在src同级目录下建立static，并将自己的静态资源放入即可</li>
+</ol>
+<p>4.部署到apache问题，将apache的默认目录改为打包后的文件目录,即打包后的文件在dist下，我们把apache2的默认目录设置为dist即可</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/12/vue.js组件化开发问题小结/" data-id="cj3tzfhak0002gipmslcmbj12" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-github" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/12/github/" class="article-date">
@@ -171,7 +226,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/12/github/" data-id="cj3tyub8z00005apmfmsuc04x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/12/github/" data-id="cj3tzfhag0001gipm6ktts6xo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -216,7 +271,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/12/hello-world/" data-id="cj3tyub9800015apmuuma9nf2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/12/hello-world/" data-id="cj3tzfha90000gipmtpe2vo6t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -254,6 +309,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/06/12/vue.js组件化开发问题小结/">vue.js打包问题总结</a>
+          </li>
         
           <li>
             <a href="/2017/06/12/github/">github</a>
