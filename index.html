@@ -61,19 +61,29 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-浅谈nginx" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-nginx" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/06/13/浅谈nginx/" class="article-date">
-  <time datetime="2017-06-13T14:10:03.315Z" itemprop="datePublished">2017-06-13</time>
+    <a href="/2017/06/13/nginx/" class="article-date">
+  <time datetime="2017-06-13T14:14:36.275Z" itemprop="datePublished">2017-06-13</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/13/nginx/">nginx</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="–"><a href="#–" class="headerlink" title="–"></a>–</h2><h2 id="title-nginx"><a href="#title-nginx" class="headerlink" title="title: nginx "></a>title: nginx </h2><h3 id="浅谈nginx"><a href="#浅谈nginx" class="headerlink" title="浅谈nginx"></a>浅谈nginx</h3><p> 什么是nginx？<br>      Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，并在一个BSD-like 协议下发行。<br>何为反向代理？<br>  下面说说我的肤浅的理解。<br>   先说说正向代理。比如我们用vpn时 我们访问百度还是直接输入<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a> ，我们并不关心代理服务器的存在<br>   而反响代理正好相反，我们访问天猫时其实并不是访问的真正的数据服务器，而是直接访问的代理服务器，再由代理服务器通过一定的算法帮我们去连接真实的数据服务器，这种情况下我们并不知道真实服务器的存在，而是直接访问的代理服务器。<br>  nginx安装<br>  下面以ubuntu为例<br>  首先从<a href="http://nginx.org/en/download.html" title="nginx下载地址" target="_blank" rel="external">nginx下载地址</a><br>  此时我们下载的为tar.gz的文件<br>  解归档和解压缩  tar -xzvf + 上诉文件名<br>  cd nginx（解压缩后的文件）<br>  会看到一个configure的脚本文件 执行该脚本 ./configure<br>  此时我们可能会缺少某个包报错</p>
+        <h2 id="浅谈nginx"><a href="#浅谈nginx" class="headerlink" title="浅谈nginx"></a>浅谈nginx</h2><p> 什么是nginx？<br>      Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，并在一个BSD-like 协议下发行。<br>何为反向代理？<br>  下面说说我的肤浅的理解。<br>   先说说正向代理。比如我们用vpn时 我们访问百度还是直接输入<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a> ，我们并不关心代理服务器的存在<br>   而反响代理正好相反，我们访问天猫时其实并不是访问的真正的数据服务器，而是直接访问的代理服务器，再由代理服务器通过一定的算法帮我们去连接真实的数据服务器，这种情况下我们并不知道真实服务器的存在，而是直接访问的代理服务器。<br>  nginx安装<br>  下面以ubuntu为例<br>  首先从<a href="http://nginx.org/en/download.html" title="nginx下载地址" target="_blank" rel="external">nginx下载地址</a><br>  此时我们下载的为tar.gz的文件<br>  解归档和解压缩  tar -xzvf + 上诉文件名<br>  cd nginx（解压缩后的文件）<br>  会看到一个configure的脚本文件 执行该脚本 ./configure<br>  此时我们可能会缺少某个包报错</p>
 <pre><code>apt-get install libpcre3 libpcre3-dev
 apt-get install openssl 
 apt-get install libssl-dev
@@ -125,7 +135,7 @@ upstream mytest{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/13/浅谈nginx/" data-id="cj3vn4mq80004y3pmnpck7ogf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/13/nginx/" data-id="cj3vnhtr100028fpmatoobsrg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -182,7 +192,7 @@ upstream mytest{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/13/usegithub/" data-id="cj3vn4mq20002y3pm1p2gwhza" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/13/usegithub/" data-id="cj3vnhtr400038fpm710a3qiq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -302,7 +312,7 @@ upstream mytest{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/13/github/" data-id="cj3vn4mpq0000y3pmqw90z0j9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/13/github/" data-id="cj3vnhtqp00008fpmxu1ahrw3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -347,7 +357,7 @@ upstream mytest{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/13/hello-world/" data-id="cj3vn4mpx0001y3pm9t0h9jhc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/13/hello-world/" data-id="cj3vnhtqy00018fpm5knlmizf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -402,7 +412,7 @@ upstream mytest{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/12/vue.js组件化开发问题小结/" data-id="cj3vn4mq50003y3pmpvrm7t39" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/12/vue.js组件化开发问题小结/" data-id="cj3vnhtr500048fpmmnbu5u19" class="article-share-link">Share</a>
       
       
     </footer>
@@ -442,7 +452,7 @@ upstream mytest{
       <ul>
         
           <li>
-            <a href="/2017/06/13/浅谈nginx/">(no title)</a>
+            <a href="/2017/06/13/nginx/">nginx</a>
           </li>
         
           <li>
