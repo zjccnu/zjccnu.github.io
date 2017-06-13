@@ -3,14 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>github | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="我们理解您需要更便捷更高效的工具记录思想，整理笔记、知识，并将其中承载的价值传播给他人，Cmd Markdown 是我们给出的答案 —— 我们为记录思想和分享知识提供更专业的工具。 您可以使用 Cmd Markdown：   整理知识，学习笔记 发布日记，杂文，所见所想 撰写发布技术文稿（代码支持） 撰写发布学术论文（LaTeX 公式支持）    除了您现在看到的这个 Cmd Markdown 在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="github">
+<meta property="og:url" content="http://yoursite.com/2017/06/13/github/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="我们理解您需要更便捷更高效的工具记录思想，整理笔记、知识，并将其中承载的价值传播给他人，Cmd Markdown 是我们给出的答案 —— 我们为记录思想和分享知识提供更专业的工具。 您可以使用 Cmd Markdown：   整理知识，学习笔记 发布日记，杂文，所见所想 撰写发布技术文稿（代码支持） 撰写发布学术论文（LaTeX 公式支持）    除了您现在看到的这个 Cmd Markdown 在">
+<meta property="og:image" content="https://www.zybuluo.com/static/img/logo.png">
+<meta property="og:image" content="https://www.zybuluo.com/static/img/toolbar-editor.png">
+<meta property="og:image" content="https://www.zybuluo.com/static/img/toolbar-manager.jpg">
+<meta property="og:image" content="https://www.zybuluo.com/static/img/toolbar-reader.jpg">
+<meta property="og:image" content="https://www.zybuluo.com/static/img/file-list.png">
+<meta property="og:updated_time" content="2017-06-12T08:47:17.969Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="github">
+<meta name="twitter:description" content="我们理解您需要更便捷更高效的工具记录思想，整理笔记、知识，并将其中承载的价值传播给他人，Cmd Markdown 是我们给出的答案 —— 我们为记录思想和分享知识提供更专业的工具。 您可以使用 Cmd Markdown：   整理知识，学习笔记 发布日记，杂文，所见所想 撰写发布技术文稿（代码支持） 撰写发布学术论文（LaTeX 公式支持）    除了您现在看到的这个 Cmd Markdown 在">
+<meta name="twitter:image" content="https://www.zybuluo.com/static/img/logo.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,140 +69,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-浅谈nginx" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/13/浅谈nginx/" class="article-date">
-  <time datetime="2017-06-13T14:10:03.315Z" itemprop="datePublished">2017-06-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="–"><a href="#–" class="headerlink" title="–"></a>–</h2><h2 id="title-nginx"><a href="#title-nginx" class="headerlink" title="title: nginx "></a>title: nginx </h2><h3 id="浅谈nginx"><a href="#浅谈nginx" class="headerlink" title="浅谈nginx"></a>浅谈nginx</h3><p> 什么是nginx？<br>      Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，并在一个BSD-like 协议下发行。<br>何为反向代理？<br>  下面说说我的肤浅的理解。<br>   先说说正向代理。比如我们用vpn时 我们访问百度还是直接输入<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a> ，我们并不关心代理服务器的存在<br>   而反响代理正好相反，我们访问天猫时其实并不是访问的真正的数据服务器，而是直接访问的代理服务器，再由代理服务器通过一定的算法帮我们去连接真实的数据服务器，这种情况下我们并不知道真实服务器的存在，而是直接访问的代理服务器。<br>  nginx安装<br>  下面以ubuntu为例<br>  首先从<a href="http://nginx.org/en/download.html" title="nginx下载地址" target="_blank" rel="external">nginx下载地址</a><br>  此时我们下载的为tar.gz的文件<br>  解归档和解压缩  tar -xzvf + 上诉文件名<br>  cd nginx（解压缩后的文件）<br>  会看到一个configure的脚本文件 执行该脚本 ./configure<br>  此时我们可能会缺少某个包报错</p>
-<pre><code>apt-get install libpcre3 libpcre3-dev
-apt-get install openssl 
-apt-get install libssl-dev
-
-
-  make install  //进行安装
-</code></pre><p>#<br>此时我们的nginx会安装在</p>
-<pre><code>/usr/local/nginx 
-//nginx启动
-cd /usr/local/nginx/sbin
-./nginx //启动nginx
-./nginx -s stop //停止nginx
-./nginx reload //重新加载
-</code></pre><p>[TOCM]</p>
-<h3 id="nginx基本配置"><a href="#nginx基本配置" class="headerlink" title="nginx基本配置"></a>nginx基本配置</h3><p>负载均衡配置<br>   nginx负载均衡算法<a href="http://blog.csdn.net/gzh0222/article/details/8095994" title="常见的5中算法" target="_blank" rel="external">常见的5中算法</a></p>
-<p>下面说收iphash算法的具体配置<br>进行配置文件 </p>
-<pre><code>vim  /usr/local/nginx/conf/nginx.conf 
-//配额文件如下
-#配置负载均衡服务器以及其权重
-upstream mytest{
-      server  localhost:4000 weight=1;
-      server  localhost weight=1;
-     }
-
-    server {
-        listen       9010;
-        server_name  localhost;
-
-        #charset koi8-r;
-
-        #access_log  logs/host.access.log  main;
-
-        location / {
-            root   html;
-            index  index.html index.htm;
-            proxy_pass http://mytest;
-        }
-
-        #error_page  404              /404.html;
-
-        # redirect server error pages to the static page /50x.html
-        #
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-            root   html;
-        }
-</code></pre><p>按上诉配置进行配置后重启nginx ,我们将会看到localhost:4000<br>                                                                           localhost<br>将会被交替访问。<br>其余的负载均衡算法大家可以自己去尝试-</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/13/浅谈nginx/" data-id="cj3vn4mq80004y3pmnpck7ogf" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-usegithub" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/13/usegithub/" class="article-date">
-  <time datetime="2017-06-13T09:38:14.294Z" itemprop="datePublished">2017-06-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/13/usegithub/">use git with github</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="how-to-use-git-with-others-in-github"><a href="#how-to-use-git-with-others-in-github" class="headerlink" title="how to use git  with others in github"></a>how to use git  with others in github</h2><p>`——<br>首先先解决几个问题？</p>
-<ul>
-<li><p>git是什么？<br>   Git是一个开源的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件</p>
-</li>
-<li><p>git可以做什么?<br> 1、从服务器上克隆数据库（包括代码和版本信息）到单机上。<br> 2、在自己的机器上创建分支，修改代码。<br> 3、在单机上自己创建的分支上提交代码。<br> 4、在单机上合并分支。<br> 5、新建一个分支，把服务器上最新版的代码fetch下来，然后跟自己的主分支合并<br> 6、生成补丁（patch），把补丁发送给主开发者。<br> 7、看主开发者的反馈，如果主开发者发现两个一般开发者之间有冲突（他们之间可以合作解决的冲突），就会要求他们先解决冲突，然后再由其中一个人提交。如果主开发者可以自己解决，或者没有冲突，就通过。<br> 8、一般开发者之间解决冲突的方法，开发者之间可以使用pull 命令解决冲突，解决完冲突之后再向主开发者提交补丁。</p>
-</li>
-</ul>
-<ol>
-<li>由于本片文章重点不在于git的配置,关于如何安装配置git，以及将github作为git的中心库的过程可以自行百度。[git配置过程][1]</li>
-</ol>
-<p>下面的操作是在上诉过程配置完成后进行的，我们通过解决实际开发中所遇到的问题对git进行一一的讲解(我们以命令行的方式进行讲解)。<br>   1.如何将我们本地的代码同步的github？<br>      首先先熟悉2个概念(本地仓库，中心仓库)<br>      本地仓库:我们放置我们代码的文件夹<br>      中心仓库:github的仓库(相当于svn的中心服务器)。<br>      代码同步的过程实际上是将本地仓库的代码同步到github中心仓库。<br>         1 新建本地仓库。<br>          右键想作为本地仓库的文件夹，选择git bash(如果成功安装git后会出想这个选项)。<br>          输入命令:<br>                      git init（将该文件夹初始化为本地仓库）<br>        2  当我们修改了代码,首先需提交到本地仓库<br>                     git status (查看当前的文件的改动)<br>                     git add +文件名/×（×代表所有文件）<br>                     git commit -m ‘备注信息’<br>                     上面2个步骤就是将修改的代码同步到本地仓库<br>                     git remote add origin git://github.com/zjccnu/test.git（为你的github仓库地址）<br>                     git push 将本地代码上传的github仓库</p>
-<ol>
-<li>多个人合作时怎么向别人的项目提交代码。<br> 比如 A B C三人合作开发一个项目(A为主导者即A创建项目)<ol>
-<li>A创建项目test(姑且叫这个名字)</li>
-<li>B C去fork A的test项目</li>
-<li>B C操作一样,下面说B的操作</li>
-<li>B fork后自己的仓库将会也有一个test项目，B将该项目clone到本地<br>命令为:<br> git clone +’B的test项目github地址’<br>5.B在本地进行自己的编码工作。<br>下面提到一个新概念:分支 branch<br>什么是分支以及为什么要分支？<br>分支相当于对我们clone的test项目的一个浅拷贝。我们在分支上的修改将不会影响到我们的主分支<br>建立dev分支并切换<br>git checkout -b dev<br>6.下面B的所有工作将在dev分支上进行，当B改完后，需要将该分支合并到主分支，然后同步到自己的远程仓库<br>合并分支:B首先切换到master分支<br>git merge dev<br>将dev分支合并到master分支上。<br>将修改同步到本地仓库，以及同步到自己github上的命令同上。<br>B在去自己的github的test项目里点击pull request 提交请求</li>
-</ol>
-</li>
-</ol>
-<p>3: 当B C同时修改后A合并了，BC怎么保证自己的远程仓库和A一致<br>            思路如下(B从本地获取A的代码，然后将A的代码同步到自己的github从而间接的实现了同步)<br>               BC 一样故下面以B为例进行分析<br>               首先新建分支 :git checkout -b dev<br>               git remote -v（查看当前源）<br>               B在test的本地仓库添加upstream为A的远程仓库地址<br>               命令如下 ：<br>               git remote add upstream +A的远程仓库地址<br>               获取A的test项目<br>               git fetch upstream<br>               git merge upstream/master<br>            （这里的master只的是从A远程获取的master分支,不是自己本地的master分支）<br>                再将dev分支和本地的master分支合并<br>                (<br>            git checkout master(切换到master分支)<br>             git merge dev （将dev合并到master）<br>             git branch -D dev 上出dev分支 )<br>             git push（同步到B的github仓库）<br>                ）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/13/usegithub/" data-id="cj3vn4mq20002y3pm1p2gwhza" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-github" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-github" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/13/github/" class="article-date">
   <time datetime="2017-06-13T09:38:14.270Z" itemprop="datePublished">2017-06-13</time>
@@ -205,8 +82,8 @@ upstream mytest{
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/13/github/">github</a>
+    <h1 class="article-title" itemprop="name">
+      github
     </h1>
   
 
@@ -308,110 +185,28 @@ upstream mytest{
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/13/hello-world/" class="article-date">
-  <time datetime="2017-06-13T09:38:14.266Z" itemprop="datePublished">2017-06-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2017/06/13/usegithub/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/13/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/13/hello-world/" data-id="cj3vn4mpx0001y3pm9t0h9jhc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-vue.js组件化开发问题小结" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/12/vue.js组件化开发问题小结/" class="article-date">
-  <time datetime="2017-06-12T10:09:05.000Z" itemprop="datePublished">2017-06-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          use git with github
         
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/12/vue.js组件化开发问题小结/">vue.js打包问题总结</a>
-    </h1>
   
+    <a href="/2017/06/13/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<ol>
-<li>vue 打包静态界面报错<br>可能原因：index.html 中 和compnetnts中进行了重复的引用<br>解决方案: 去掉重复的引用</li>
-<li>vue 打包es6语法报错问题(dev下不错但是build报错)<br>可能原因:1.babel配置问题，具体配置自行百度<pre><code>2.webpack.prod.conf.js 在配置发布配置时默认采用
-     new webpack.optimize.UglifyJsPlugin({
-         compress: {
-           warnings: false
-         },
-         sourceMap: true
-       })
-  不会将es6转es5 直接去掉这个代码，会采用babel进行编辑
-</code></pre>3:vue打包后静态资源找不到，在config 中的index.js里，我们看到如下配置<pre><code>index: path.resolve(__dirname, &apos;../dist/index.html&apos;),
- assetsRoot: path.resolve(__dirname, &apos;../dist&apos;),
- assetsSubDirectory: &apos;static&apos;,
- assetsPublicPath: &apos;/&apos;,
- productionSourceMap: true,
-</code></pre>静态资源默认为与src同级的static下，所以需要自己在src同级目录下建立static，并将自己的静态资源放入即可</li>
-</ol>
-<p>4.部署到apache问题，将apache的默认目录改为打包后的文件目录,即打包后的文件在dist下，我们把apache2的默认目录设置为dist即可</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/12/vue.js组件化开发问题小结/" data-id="cj3vn4mq50003y3pmpvrm7t39" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
 
 </section>
         

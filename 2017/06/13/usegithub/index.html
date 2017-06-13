@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>use git with github | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="how to use git  with others in github`——首先先解决几个问题？  git是什么？   Git是一个开源的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件  git可以做什么? 1、从服务器上克隆数据库（包括代码和版本信息）到单机上">
+<meta property="og:type" content="article">
+<meta property="og:title" content="use git with github">
+<meta property="og:url" content="http://yoursite.com/2017/06/13/usegithub/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="how to use git  with others in github`——首先先解决几个问题？  git是什么？   Git是一个开源的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件  git可以做什么? 1、从服务器上克隆数据库（包括代码和版本信息）到单机上">
+<meta property="og:updated_time" content="2017-06-12T14:28:32.949Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="use git with github">
+<meta name="twitter:description" content="how to use git  with others in github`——首先先解决几个问题？  git是什么？   Git是一个开源的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件  git可以做什么? 1、从服务器上克隆数据库（包括代码和版本信息）到单机上">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-usegithub" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/13/usegithub/" class="article-date">
+  <time datetime="2017-06-13T09:38:14.294Z" itemprop="datePublished">2017-06-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      use git with github
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="how-to-use-git-with-others-in-github"><a href="#how-to-use-git-with-others-in-github" class="headerlink" title="how to use git  with others in github"></a>how to use git  with others in github</h2><p>`——<br>首先先解决几个问题？</p>
+<ul>
+<li><p>git是什么？<br>   Git是一个开源的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件</p>
+</li>
+<li><p>git可以做什么?<br> 1、从服务器上克隆数据库（包括代码和版本信息）到单机上。<br> 2、在自己的机器上创建分支，修改代码。<br> 3、在单机上自己创建的分支上提交代码。<br> 4、在单机上合并分支。<br> 5、新建一个分支，把服务器上最新版的代码fetch下来，然后跟自己的主分支合并<br> 6、生成补丁（patch），把补丁发送给主开发者。<br> 7、看主开发者的反馈，如果主开发者发现两个一般开发者之间有冲突（他们之间可以合作解决的冲突），就会要求他们先解决冲突，然后再由其中一个人提交。如果主开发者可以自己解决，或者没有冲突，就通过。<br> 8、一般开发者之间解决冲突的方法，开发者之间可以使用pull 命令解决冲突，解决完冲突之后再向主开发者提交补丁。</p>
+</li>
+</ul>
+<ol>
+<li>由于本片文章重点不在于git的配置,关于如何安装配置git，以及将github作为git的中心库的过程可以自行百度。[git配置过程][1]</li>
+</ol>
+<p>下面的操作是在上诉过程配置完成后进行的，我们通过解决实际开发中所遇到的问题对git进行一一的讲解(我们以命令行的方式进行讲解)。<br>   1.如何将我们本地的代码同步的github？<br>      首先先熟悉2个概念(本地仓库，中心仓库)<br>      本地仓库:我们放置我们代码的文件夹<br>      中心仓库:github的仓库(相当于svn的中心服务器)。<br>      代码同步的过程实际上是将本地仓库的代码同步到github中心仓库。<br>         1 新建本地仓库。<br>          右键想作为本地仓库的文件夹，选择git bash(如果成功安装git后会出想这个选项)。<br>          输入命令:<br>                      git init（将该文件夹初始化为本地仓库）<br>        2  当我们修改了代码,首先需提交到本地仓库<br>                     git status (查看当前的文件的改动)<br>                     git add +文件名/×（×代表所有文件）<br>                     git commit -m ‘备注信息’<br>                     上面2个步骤就是将修改的代码同步到本地仓库<br>                     git remote add origin git://github.com/zjccnu/test.git（为你的github仓库地址）<br>                     git push 将本地代码上传的github仓库</p>
+<ol>
+<li>多个人合作时怎么向别人的项目提交代码。<br> 比如 A B C三人合作开发一个项目(A为主导者即A创建项目)<ol>
+<li>A创建项目test(姑且叫这个名字)</li>
+<li>B C去fork A的test项目</li>
+<li>B C操作一样,下面说B的操作</li>
+<li>B fork后自己的仓库将会也有一个test项目，B将该项目clone到本地<br>命令为:<br> git clone +’B的test项目github地址’<br>5.B在本地进行自己的编码工作。<br>下面提到一个新概念:分支 branch<br>什么是分支以及为什么要分支？<br>分支相当于对我们clone的test项目的一个浅拷贝。我们在分支上的修改将不会影响到我们的主分支<br>建立dev分支并切换<br>git checkout -b dev<br>6.下面B的所有工作将在dev分支上进行，当B改完后，需要将该分支合并到主分支，然后同步到自己的远程仓库<br>合并分支:B首先切换到master分支<br>git merge dev<br>将dev分支合并到master分支上。<br>将修改同步到本地仓库，以及同步到自己github上的命令同上。<br>B在去自己的github的test项目里点击pull request 提交请求</li>
+</ol>
+</li>
+</ol>
+<p>3: 当B C同时修改后A合并了，BC怎么保证自己的远程仓库和A一致<br>            思路如下(B从本地获取A的代码，然后将A的代码同步到自己的github从而间接的实现了同步)<br>               BC 一样故下面以B为例进行分析<br>               首先新建分支 :git checkout -b dev<br>               git remote -v（查看当前源）<br>               B在test的本地仓库添加upstream为A的远程仓库地址<br>               命令如下 ：<br>               git remote add upstream +A的远程仓库地址<br>               获取A的test项目<br>               git fetch upstream<br>               git merge upstream/master<br>            （这里的master只的是从A远程获取的master分支,不是自己本地的master分支）<br>                再将dev分支和本地的master分支合并<br>                (<br>            git checkout master(切换到master分支)<br>             git merge dev （将dev合并到master）<br>             git branch -D dev 上出dev分支 )<br>             git push（同步到B的github仓库）<br>                ）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/13/usegithub/" data-id="cj3vn4mq20002y3pm1p2gwhza" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/13/浅谈nginx/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/13/github/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">github</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/13/浅谈nginx/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/13/usegithub/">use git with github</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/13/github/">github</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/13/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/12/vue.js组件化开发问题小结/">vue.js打包问题总结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
