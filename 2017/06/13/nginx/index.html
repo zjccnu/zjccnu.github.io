@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/13/nginx/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="浅谈nginx 什么是nginx？      Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，并在一个BSD-like 协议下发行。何为反向代理？  下面说说我的肤浅的理解。   先说说正向代理。比如我们用vpn时 我们访问百度还是直接输入http://www.baidu.com ，我们并不关心代理服务器的存在   而反响代理正好相反，我们访问天猫">
-<meta property="og:updated_time" content="2017-06-13T14:14:36.231Z">
+<meta property="og:updated_time" content="2017-06-13T14:23:51.592Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx">
 <meta name="twitter:description" content="浅谈nginx 什么是nginx？      Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，并在一个BSD-like 协议下发行。何为反向代理？  下面说说我的肤浅的理解。   先说说正向代理。比如我们用vpn时 我们访问百度还是直接输入http://www.baidu.com ，我们并不关心代理服务器的存在   而反响代理正好相反，我们访问天猫">
@@ -66,7 +66,7 @@
         <section id="main"><article id="post-nginx" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/13/nginx/" class="article-date">
-  <time datetime="2017-06-13T14:14:36.275Z" itemprop="datePublished">2017-06-13</time>
+  <time datetime="2017-06-13T14:23:51.632Z" itemprop="datePublished">2017-06-13</time>
 </a>
     
   </div>
@@ -98,10 +98,10 @@ apt-get install libssl-dev
 cd /usr/local/nginx/sbin
 ./nginx //启动nginx
 ./nginx -s stop //停止nginx
-./nginx reload //重新加载
+./nginx -s reload //重新加载
 </code></pre><p>[TOCM]</p>
 <h3 id="nginx基本配置"><a href="#nginx基本配置" class="headerlink" title="nginx基本配置"></a>nginx基本配置</h3><p>负载均衡配置<br>   nginx负载均衡算法<a href="http://blog.csdn.net/gzh0222/article/details/8095994" title="常见的5中算法" target="_blank" rel="external">常见的5中算法</a></p>
-<p>下面说收iphash算法的具体配置<br>进行配置文件 </p>
+<p>下面说默认的轮询算法(基于权重)的具体配置<br>进行配置文件 </p>
 <pre><code>vim  /usr/local/nginx/conf/nginx.conf 
 //配额文件如下
 #配置负载均衡服务器以及其权重
@@ -137,7 +137,7 @@ upstream mytest{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/13/nginx/" data-id="cj3vnhtr100028fpmatoobsrg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/13/nginx/" data-id="cj3vnrqhe0003d7pmgguftk9y" class="article-share-link">Share</a>
       
       
     </footer>
