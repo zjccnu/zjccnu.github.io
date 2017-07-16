@@ -61,6 +61,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-studyforvuerouter" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/16/studyforvuerouter/" class="article-date">
+  <time datetime="2017-07-16T02:11:45.000Z" itemprop="datePublished">2017-07-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/16/studyforvuerouter/">studyforvuerouter</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="vue-js学习篇一"><a href="#vue-js学习篇一" class="headerlink" title="vue.js学习篇一"></a>vue.js学习篇一</h1><h6 id="1-vue项目的创建"><a href="#1-vue项目的创建" class="headerlink" title="1.vue项目的创建"></a>1.vue项目的创建</h6><h6 id="2-vue的启动过程"><a href="#2-vue的启动过程" class="headerlink" title="2.vue的启动过程"></a>2.vue的启动过程</h6><h6 id="3-一个简单的vue-router的使用"><a href="#3-一个简单的vue-router的使用" class="headerlink" title="3.一个简单的vue-router的使用"></a>3.一个简单的vue-router的使用</h6><p>创建过程如下:</p>
+<pre><code>创建项目：
+
+vue init webpack projectName（项目名）
+新手推荐不要按张eslint(否则会从入门到放弃)
+? Use ESLint to lint your code? (Y/n)  选择n
+
+进入项目，下载依赖：
+
+npm install 或者 cnpm install
+
+运行项目：
+
+npm run dev
+</code></pre><p>cnpm是淘宝镜像,可以提高安装速度,淘宝镜像的安装方法</p>
+<pre><code>npm install -g cnpm --registry=https://registry.npm.taobao.org
+</code></pre><p>到此为vue.js的初始化工作已完成,启动后会看到Welcome to Your Vue.js App</p>
+<h3 id="启动过程"><a href="#启动过程" class="headerlink" title="启动过程"></a>启动过程</h3><p> 个人的理解不一定准确:<br>          vue的整个页面都会挂在到index.html id=app的div的模块中,把这个div看成是一张纸，每个vue的组建都会挂在到这里进行显示(不妨把id进行修改发现页面内容会消失),App.vue是一个全局占位点里面最核心的就是<router-view></router-view><br>          相当于一个占位符,每一组会占一个<router-view></router-view>，所以相当于组建首先挂在到App.vue的<router-view></router-view>上，然后挂在到index.html的app的div中，main.js是一个全局插件注册点，还有很多细节,具体开发时候可以体会。</p>
+<h3 id="3一个简单的vue-router的使用"><a href="#3一个简单的vue-router的使用" class="headerlink" title="3一个简单的vue-router的使用"></a>3一个简单的vue-router的使用</h3><pre><code>https://github.com/zjccnu/demoforstudy
+路由使用例子,通过点击按钮切换tab,包含知识点:路由的嵌套,启动过程的理解，函数式切换路由，一点生命周期的理解，特别是理解，&lt;router-view&gt;&lt;/router-view&gt;的含义
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/16/studyforvuerouter/" data-id="cj56364uc0002g8pmmnio87tn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-daily" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/29/daily/" class="article-date">
@@ -88,7 +144,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/29/daily/" data-id="cj4h72wpi00001epmvl4tft69" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/29/daily/" data-id="cj56364u80001g8pmmp3p8eog" class="article-share-link">Share</a>
       
       
     </footer>
@@ -124,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/15/webservice/" data-id="cj4h72wqk00041epmyq3u5nyw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/15/webservice/" data-id="cj56364uz0006g8pmyh9q5ih5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -208,7 +264,7 @@ upstream mytest{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/13/nginx/" data-id="cj4h72ws600061epmsg0yt4z1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/13/nginx/" data-id="cj56364vc0007g8pmhh58jtwh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -265,7 +321,7 @@ upstream mytest{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/13/usegithub/" data-id="cj4h72wpq00011epmutqxmyv6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/13/usegithub/" data-id="cj56364uf0003g8pm4y2r6b9l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -385,7 +441,7 @@ upstream mytest{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/13/github/" data-id="cj4h72wr500051epmjfjp42oh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/13/github/" data-id="cj56364tz0000g8pmra2d8cki" class="article-share-link">Share</a>
       
       
     </footer>
@@ -430,7 +486,7 @@ upstream mytest{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/13/hello-world/" data-id="cj4h72wq500021epm8mpsj1xz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/13/hello-world/" data-id="cj56364um0005g8pm28q23szy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -485,7 +541,7 @@ upstream mytest{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/12/vue.js组件化开发问题小结/" data-id="cj4h72wq700031epmxxsp9s5g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/12/vue.js组件化开发问题小结/" data-id="cj56364uh0004g8pmw1t1g9h5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -512,7 +568,7 @@ upstream mytest{
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
     </div>
   </div>
 
@@ -523,6 +579,10 @@ upstream mytest{
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/07/16/studyforvuerouter/">studyforvuerouter</a>
+          </li>
         
           <li>
             <a href="/2017/06/29/daily/">毕业感言</a>
@@ -538,10 +598,6 @@ upstream mytest{
         
           <li>
             <a href="/2017/06/13/usegithub/">use git with github</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/13/github/">github</a>
           </li>
         
       </ul>
